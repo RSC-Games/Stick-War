@@ -1,0 +1,14 @@
+{
+    "java.project.sourcePaths": [
+        "."
+    ],
+    "java.project.referencedLibraries": [
+        "c:\\Users\\sRGB\\Documents\\Code\\Velocity Projects\\Stick-War\\lib\\ogl\\lwjgl-opengl.jar",
+        "c:\\Users\\sRGB\\Documents\\Code\\Velocity Projects\\Stick-War\\lib\\jna.jar",
+        "c:\\Users\\sRGB\\Documents\\Code\\Velocity Projects\\Stick-War\\lib\\ogl\\lwjgl-stb.jar",
+        "c:\\Users\\sRGB\\Documents\\Code\\Velocity Projects\\Stick-War\\lib\\velocity.jar",
+        "c:\\Users\\sRGB\\Documents\\Code\\Velocity Projects\\Stick-War\\lib\\ogl\\lwjgl.jar",
+        "c:\\Users\\sRGB\\Documents\\Code\\Velocity Projects\\Stick-War\\lib\\ogl\\lwjgl-glfw.jar",
+        "c:\\Users\\sRGB\\Documents\\Code\\Velocity Projects\\Stick-War\\lib\\ogl\\joml-1.10.5.jar"
+    ]
+}
