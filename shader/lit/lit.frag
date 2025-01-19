@@ -1,9 +1,10 @@
 #version 330 core
 
-in vec4 color;
+in float alpha;
 in vec2 texCoord;
 in float texID;
 
+// Need to switch to a sampler2DArray
 uniform sampler2D u_Textures[32];
 
 // Light types
@@ -59,13 +60,7 @@ vec4 illuminate(vec4 texel) {
     }
 
     // No more math required. Set the output color.
-    vec3 color = texel.rgb * maxIllum;
-    //float desaturation = 0;
-
-    //float avg = (color.r + color.g + color.b) / 3;
-    //vec3 dist = color - avg;
-    //vec3 outColor = color - (dist * desaturation);
-    return vec4(color, texel.a);
+    return vec4(texel.rgb * maxIllum, texel.a);
 }
 
 void main()
@@ -73,5 +68,5 @@ void main()
     vec4 chosenTex; 
     chosenTex = texture(u_Textures[int(texID)], texCoord);
     chosenTex = illuminate(chosenTex);
-    gl_FragColor = chosenTex * color;
+    gl_FragColor = chosenTex;// * vec4(1, 1, 1, alpha);
 }

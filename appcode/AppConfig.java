@@ -11,28 +11,30 @@ public class AppConfig extends GlobalAppConfig {
         APP_NAME = "Stick War";
         ICON_PATH = "./velocity/resources/rsc_games.ico";
         APP_RES_DEFAULT = new Point(1280, 720);
-        WINDOW_RESIZABLE = false;
+        USE_VIRTUAL_RESOLUTION = true;
+        APP_VIRTUAL_RES = new Point(1280, 720);
+        WINDOW_RESIZABLE = true;
         WINDOW_FULLSCREEN = false;
 
         /********************** RENDERER CONFIG *************************/
-        DEFAULT_RENDERER = "LumaViper"; // TODO: Copperhead?
-        RENDER_BACKEND = "OpenGL";  // CopperheadGL?
+        DEFAULT_RENDERER = "Copperhead"; // TODO: Copperhead?
+        RENDER_BACKEND = "GL";  // CopperheadGL?
         ENABLE_ERP_FALLBACK = false;
         WARN_RENDERER_INIT_FAIL = true; 
         EN_DEBUG_RENDERER = false;
         REND_WORKER_COUNT = Runtime.getRuntime().availableProcessors() - 1; // CPUs
 
         /********************* SCENE LOAD CONFIG ************************/
-        START_SCENE = "TitleScreen";  // Scene loaded by default by the engine.
+        START_SCENE = "RenderTestPrimitives";  // Scene loaded by default by the engine.
         SCENE_LOAD_FAILURE_FATAL = true;
 
         /******************** WARNINGS AND ERRORS ***********************/
-        MISSING_IMAGE_FATAL = false;
+        MISSING_IMAGE_FATAL = true;
         WARNINGS_FATAL = false;
 
         /************************ DEBUGGING *****************************/
-        LOG_GC = true;  // Enable GC logging messages. Useful for engine debugging.
-        LOG_MEMORY = true;  // Log memory allocation/deallocations for sprites.
+        LOG_GC = false;  // Enable GC logging messages. Useful for engine debugging.
+        LOG_MEMORY = false;  // Log memory allocation/deallocations for sprites.
 
         /********************* RENDERER DEBUGGING ***********************/
         SUPPRESS_UNSTABLE_RENDERER_WARNING = true;

@@ -1,0 +1,52 @@
+@ANIM_ROOT;
+
+# Animation parameters and tree.
+@PARAM str "action": {
+@VALUE "idle": {
+    # Frame update is per value. No global default is used.
+    @FRAMES_PER_UPDATE 5;
+    @ONE_SHOT true;
+
+    # Loads textures for game usage.
+    @USE_TEX "./assets/sprites/player/idle.png";
+}
+@VALUE "right": {
+    # Frame update is per value. No global default is used.
+    @FRAMES_PER_UPDATE 5;
+
+    # Loads textures for game usage.
+    #@USE_TEX "./assets/sprites/player/right_walking_1.png";
+    #@USE_TEX "./assets/sprites/player/right_walking_2.png";
+    #@USE_TEX "./assets/sprites/player/right_walking_3.png";
+    #@USE_TEX "./assets/sprites/player/right_walking_4.png";
+    #@USE_TEX "./assets/sprites/player/right_walking_3.png";
+    #@USE_TEX "./assets/sprites/player/right_walking_2.png";
+}
+@VALUE "left": {
+    # Frame update is per value. No global default is used.
+    @FRAMES_PER_UPDATE 5;
+
+    # Loads textures for game usage.
+    #@USE_TEX "./assets/sprites/player/left_walking_1.png";
+    #@USE_TEX "./assets/sprites/player/left_walking_2.png";
+    #@USE_TEX "./assets/sprites/player/left_walking_3.png";
+    #@USE_TEX "./assets/sprites/player/left_walking_4.png";
+    #@USE_TEX "./assets/sprites/player/left_walking_3.png";
+    #@USE_TEX "./assets/sprites/player/left_walking_2.png";
+}
+@VALUE "jump": {
+    @FRAMES_PER_UPDATE 5;
+    @ONE_SHOT true;
+
+    #@USE_TEX "./assets/sprites/player/jump.png";
+}
+@VALUE "die": {
+    @FRAMES_PER_UPDATE 5;
+    @ONE_SHOT true;
+
+    #@USE_TEX "./assets/sprites/player/dead_1.png";
+    #@USE_TEX "./assets/sprites/player/dead_2.png";
+    #@USE_TEX "./assets/sprites/player/dead_3.png";
+    #@USE_TEX "./assets/sprites/player/dead_4.png";
+}
+}

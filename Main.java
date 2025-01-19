@@ -9,7 +9,7 @@ import appcode.SceneDefs;
 public class Main {
     public static void main(String[] args) {
         // Require a minimum Velocity version for running.
-        Version velocityVersion = new Version(0, 6, 3, 4);
+        Version velocityVersion = new Version(0, 6, 4, 0);
         if (velocityVersion.isNewer(VelocityMain.VELOCITY_VER)
             && !velocityVersion.equals(VelocityMain.VELOCITY_VER)) {
             
@@ -21,7 +21,7 @@ public class Main {
         }
 
         // Versions of velocity that are too new may pose a compatibility issue.
-        Version unsupportedVersion = new Version(0, 6, 4, 0);
+        Version unsupportedVersion = new Version(0, 6, 5, 0);
         if (unsupportedVersion.isOlder(VelocityMain.VELOCITY_VER)) {
             System.err.println("ERROR! Provided Velocity version is unsupported!");
             System.err.println("Got " + VelocityMain.VELOCITY_VER + ", minimum supported "

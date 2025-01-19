@@ -3,6 +3,10 @@ package appcode;
 import javax.annotation.processing.Generated;
 
 import appcode.scenes.*;
+import render_test.scenes.RenderTestCameraPan;
+import render_test.scenes.RenderTestLighting;
+import render_test.scenes.RenderTestPrimitives;
+import render_test.scenes.RenderTestTextures;
 import velocity.config.GlobalSceneDefs;
 
 /** 
@@ -21,5 +25,10 @@ public class SceneDefs extends GlobalSceneDefs {
         sceneDefs.put("TutorialScene", StoryScene.class);
         sceneDefs.put("GameScene", GameScene.class);
         sceneDefs.put("DeathScene", DeathScene.class);
+
+        sceneDefs.put("RenderTestPrimitives", RenderTestPrimitives.class);
+        sceneDefs.put("RenderTestTextures", RenderTestTextures.class);
+        sceneDefs.put("RenderTestCameraPan", RenderTestCameraPan.class);
+        sceneDefs.put("RenderTestLighting", RenderTestLighting.class);
     }
 }

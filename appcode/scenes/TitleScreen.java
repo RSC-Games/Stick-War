@@ -22,6 +22,7 @@ public class TitleScreen extends Scene {
         /* End of reusable sprite section. */
 
         /* Add sprites here (in sort order from 0 - array.length) */
+        
         /* Stop adding sprites here. */
 
         /* Baked collision data here (written in by hand by developer) */
