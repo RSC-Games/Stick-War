@@ -25,7 +25,7 @@ public class AppConfig extends GlobalAppConfig {
         REND_WORKER_COUNT = Runtime.getRuntime().availableProcessors() - 1; // CPUs
 
         /********************* SCENE LOAD CONFIG ************************/
-        START_SCENE = "RenderTestPrimitives";  // Scene loaded by default by the engine.
+        START_SCENE = "GameScene";  // Scene loaded by default by the engine.
         SCENE_LOAD_FAILURE_FATAL = true;
 
         /******************** WARNINGS AND ERRORS ***********************/

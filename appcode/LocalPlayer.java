@@ -15,9 +15,7 @@ public class LocalPlayer extends DynamicSprite {
     private int maxHP = 0;
     private int hp = 0;
 
-    private BoundedCamera gameCamera;
-
-    private int speed = 3;
+    private int speed = 5;
     private AnimStateMachine anim;
     private boolean dead = false;
 
@@ -32,22 +30,22 @@ public class LocalPlayer extends DynamicSprite {
     }
 
     public void init() {
-        this.gameCamera = Scene.currentScene.getSprite(BoundedCamera.class);
+        //this.gameCamera = Scene.currentScene.getSprite(BoundedCamera.class);
     }
 
     public void tick() {
         if (dead) return;
 
-        int vertical = -InputSystem.getAxis(KeyEvent.VK_W, KeyEvent.VK_S);
+        //int vertical = -InputSystem.getAxis(KeyEvent.VK_W, KeyEvent.VK_S);
         int horizontal = InputSystem.getAxis(KeyEvent.VK_D, KeyEvent.VK_A);
         boolean clicked = InputSystem.clicked(MouseEvent.BUTTON1); // For attacking.
 
         // Move the character.
-        Point moveVec = clampMove(new Point(horizontal * speed, vertical * speed));
+        Point moveVec = clampMove(new Point(horizontal * speed, 0 * speed));
         pos.translate(moveVec);
 
         // Animation state.
-        //setState(moveVec);
+        setState(moveVec);
         this.anim.animTick();
 
         // Update draw rect.
@@ -66,15 +64,14 @@ public class LocalPlayer extends DynamicSprite {
 
     private void setState(Point mv) {
         if (mv.x == 0 && mv.y == 0)
-            anim.setBool("idle", true);
+            anim.setString("action", "idle");
         else if (mv.x > 0) {
-            anim.setBool("idle", false);
-            anim.setString("dir", "right");
+            anim.setString("action", "right");
         }
         else if (mv.x < 0) {
-            anim.setBool("idle", false);
-            anim.setString("dir", "left");
+            anim.setString("action", "left");
         }
+        /*
         else if (mv.y > 0) {
             anim.setBool("idle", false);
             anim.setString("dir", "down");
@@ -82,6 +79,6 @@ public class LocalPlayer extends DynamicSprite {
         else if (mv.y < 0) {
             anim.setBool("idle", false);
             anim.setString("dir", "up");
-        }
+        }*/
     }
 }

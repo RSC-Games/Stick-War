@@ -3,6 +3,7 @@ package appcode.scenes;
 import java.awt.Color;
 
 import appcode.*;
+import appcode.environment.MapBackground;
 import appcode.ui.FullScreenHandler;
 import appcode.ui.MusicPlayer;
 import appcode.ui.PauseManager;
@@ -22,13 +23,13 @@ public class GameScene extends Scene {
         /* Add sprites here that need to be added in multiple areas.
          * Keep in mind that these sprites will still need to be added to the scene list.
          */
-        LocalPlayer localPlayer = new LocalPlayer(Point.zero, 50, "LocalPlayer", 
+        LocalPlayer localPlayer = new LocalPlayer(Point.zero, 0, "LocalPlayer", 
                               "./assets/sprites/player/idle.png");
         /* End of reusable sprite section. */
 
         /* Add sprites here (in sort order from 0 - array.length) */
         sprites.add(new AreaLight(1));
-        sprites.add(new ImageSprite(Point.zero, 0, "Background", "./assets/sprites/map/city_background.png"));
+        sprites.add(new MapBackground());
         sprites.add(new ImageSprite(Point.zero, 0, "Map", "./assets/sprites/map/full_map.png"));
         sprites.add(localPlayer);
         /* Stop adding sprites here. */

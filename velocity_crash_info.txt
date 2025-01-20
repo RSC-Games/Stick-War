@@ -1,4 +1,4 @@
-VELOCITY v0.6.4.0-dev CRASH LOG 2025-01-18T23:56:22.674079200
+VELOCITY v0.6.4.0-dev CRASH LOG 2025-01-19T21:01:53.034958
 
 A fatal exception has been detected in the Velocity Player.
 Generated message: The provided scene could not be loaded.
@@ -7,7 +7,7 @@ Exception in thread main velocity.InvalidSceneException: Scene load failure.
 	at velocity.Scene.loadScene0(Scene.java:198)
 	at velocity.Scene.INTERNAL_runSceneLoads(Scene.java:99)
 	at velocity.VelocityMain.gameLoop(VelocityMain.java:278)
-	at com.rsc_games.copperheadgl.GLEventHandler.onTimerTick(GLEventHandler.java:117)
+	at com.rsc_games.copperheadgl.GLEventHandler.onTimerTick(GLEventHandler.java:116)
 	at velocity.renderer.DrawTimer.tick(DrawTimer.java:51)
 	at velocity.VelocityMain.app_main(VelocityMain.java:186)
 	at Main.main(Main.java:34)
