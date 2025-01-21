@@ -2,15 +2,16 @@ package appcode;
 
 import java.awt.Color;
 import velocity.util.Point;
+import velocity.util.Transform;
+import velocity.Rect;
 import velocity.sprite.ui.UIText;
 
 public class MemTracer extends UIText {
     long heapAvail;
     long totalHeap;
 
-    public MemTracer(Point pos, int rot, String name, Color c) {
-        super(pos, rot, name, "Serif", c);
-        this.sortOrder = 1;
+    public MemTracer(Point pos, String name, Color c) {
+        super(new Transform(new Rect(pos, Point.zero), 1), name, "Serif", c);
         this.heapAvail = 0L;
         this.totalHeap = 0L;
     }

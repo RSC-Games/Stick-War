@@ -1,6 +1,7 @@
 package appcode.ui;
 
 import velocity.util.Point;
+import velocity.util.Transform;
 import velocity.sprite.Sprite;
 import velocity.audio.MusicClip;
 
@@ -8,7 +9,7 @@ public class MusicPlayer extends Sprite {
     MusicClip clip;
 
     public MusicPlayer(String name, String songpath) {
-        super(Point.zero, 0f, "MusicPlayer");
+        super(new Transform(Point.zero), "MusicPlayer");
         this.clip = new MusicClip(songpath, true);
     }
 

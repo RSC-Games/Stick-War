@@ -3,13 +3,14 @@ package appcode.environment;
 import velocity.Scene;
 import velocity.sprite.ImageSprite;
 import velocity.util.Point;
+import velocity.util.Transform;
 
 public class MapBackground extends ImageSprite {
     public MapBackground() {
-        super(Point.zero, 0f, "Map Background", "./assets/sprites/map/city_background.png");
+        super(new Transform(Point.zero), "Map Background", "./assets/sprites/map/city_background.png");
     }
 
     public void tick() {
-        this.pos.setPos(Scene.currentScene.getCamera().pos.getPos());
+        this.transform.setPosition(Scene.currentScene.getCamera().transform.getPosition());
     }
 }

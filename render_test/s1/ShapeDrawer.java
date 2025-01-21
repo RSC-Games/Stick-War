@@ -4,6 +4,7 @@ import render_test.SceneSwitcher;
 
 import java.awt.Color;
 import velocity.util.Popup;
+import velocity.util.Transform;
 import velocity.Rect;
 import velocity.Scene;
 import velocity.renderer.DrawInfo;
@@ -17,7 +18,7 @@ public class ShapeDrawer extends Renderable {
 
     int frames = 0;
     public ShapeDrawer(Point pos) {
-        super(pos, 0, "Draw Shapes");
+        super(new Transform(pos), "Draw Shapes");
     }
 
     @Override

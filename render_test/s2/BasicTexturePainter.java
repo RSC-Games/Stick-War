@@ -2,16 +2,16 @@ package render_test.s2;
 
 import render_test.SceneSwitcher;
 import velocity.util.Popup;
+import velocity.util.Transform;
 import velocity.Scene;
 import velocity.renderer.DrawInfo;
 import velocity.renderer.FrameBuffer;
 import velocity.renderer.UnsupportedFrameBufferOperation;
 import velocity.sprite.ImageSprite;
-import velocity.util.Point;
 
 public class BasicTexturePainter extends ImageSprite {
-    public BasicTexturePainter(Point pos, int rot, String name, String path) {
-        super(pos, rot, name, path);
+    public BasicTexturePainter(Transform transform, String name, String path) {
+        super(transform, name, path);
     }
 
     @Override

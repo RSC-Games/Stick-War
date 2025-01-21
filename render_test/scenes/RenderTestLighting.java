@@ -14,15 +14,15 @@ public class RenderTestLighting extends Scene {
         sprites.clear();
 
         /* Add sprites here (in sort order from 0 - array.length) */
-        sprites.add(new LitTexturePainter(new Point(0, 0), 0, "Tex0", "./images/checkerboard.png"));
-        sprites.add(new LitTexturePainter(new Point(512, 0), 0, "Tex1", "./images/colored_checkerboard.png"));
+        sprites.add(new LitTexturePainter(new Transform(new Point(0, 0)), "Tex0", "./images/checkerboard.png"));
+        sprites.add(new LitTexturePainter(new Transform(new Point(512, 0)), "Tex1", "./images/colored_checkerboard.png"));
         sprites.add(new LightingPanTarget(new Point(0, 0)));
         sprites.add(new SceneSwitcher(new Point(0, 0), 10, "GameScene"));
         /* Stop adding sprites here. */
 
         /* UI Panel here */
-        sprites.add(new FPSCounter(new Point(3, 12), 0, "FPS", Color.white));
-        sprites.add(new DrawText(new Point(3, 26), 0, "Text", "TEST: Illumination", Color.green));
+        sprites.add(new FPSCounter(new Transform(new Point(3, 12)), "FPS", Color.white));
+        sprites.add(new DrawText(new Transform(new Point(3, 26)), "Text", "TEST: Illumination", Color.green));
         /* End UI Panel */
 
         // Camera required for rendering. DO NOT FORGET!

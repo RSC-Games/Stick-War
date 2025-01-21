@@ -21,10 +21,10 @@ import velocity.config.GlobalSceneDefs;
 public class SceneDefs extends GlobalSceneDefs {
     public SceneDefs() {
         super();
-        sceneDefs.put("TitleScreen", TitleScreen.class);
-        sceneDefs.put("TutorialScene", StoryScene.class);
+        //sceneDefs.put("TitleScreen", TitleScreen.class);
+        //sceneDefs.put("TutorialScene", StoryScene.class);
         sceneDefs.put("GameScene", GameScene.class);
-        sceneDefs.put("DeathScene", DeathScene.class);
+        //sceneDefs.put("DeathScene", DeathScene.class);
 
         sceneDefs.put("RenderTestPrimitives", RenderTestPrimitives.class);
         sceneDefs.put("RenderTestTextures", RenderTestTextures.class);

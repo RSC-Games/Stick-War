@@ -5,6 +5,7 @@ import render_test.FollowTarget;
 import java.awt.Color;
 
 import velocity.util.Point;
+import velocity.util.Transform;
 import velocity.lighting.PointLight;
 import velocity.sprite.Camera;
 
@@ -16,16 +17,16 @@ public class LightingPanTarget extends FollowTarget {
     Point iniPos;
 
     public LightingPanTarget(Point pos) {
-        super(pos, 0, "Target");
-        this.pos.setWH(Camera.res.x, Camera.res.y);
-        this.light = new PointLight(this.pos.getPos(), 250, 1.5f, Color.white);
-        this.mLight = new PointLight(this.pos.getPos(), 100, 1.2f, Color.white);
-        this.iniPos = this.pos.getPos();
+        super(new Transform(pos), "Target");
+        this.transform.updateRect(new Point(Camera.res.x, Camera.res.y));
+        this.light = new PointLight(this.transform.getPosition(), 250, 1.5f, Color.white);
+        this.mLight = new PointLight(this.transform.getPosition(), 100, 1.2f, Color.white);
+        this.iniPos = this.transform.getPosition();
     }
 
     public void tick() {
-        this.pos.setPos(parametric(frames / 180f).add(iniPos));
-        this.mLight.setPos(this.pos.getPos());
+        this.transform.setPosition(parametric(frames / 180f).add(iniPos));
+        this.mLight.setPos(this.transform.getPosition());
         frames++;
     }
 

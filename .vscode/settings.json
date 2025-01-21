@@ -9,6 +9,17 @@
         "c:\\Users\\sRGB\\Documents\\Code\\Velocity Projects\\Stick-War\\lib\\velocity.jar",
         "c:\\Users\\sRGB\\Documents\\Code\\Velocity Projects\\Stick-War\\lib\\ogl\\lwjgl.jar",
         "c:\\Users\\sRGB\\Documents\\Code\\Velocity Projects\\Stick-War\\lib\\ogl\\lwjgl-glfw.jar",
-        "c:\\Users\\sRGB\\Documents\\Code\\Velocity Projects\\Stick-War\\lib\\ogl\\joml-1.10.5.jar"
+        "c:\\Users\\sRGB\\Documents\\Code\\Velocity Projects\\Stick-War\\lib\\ogl\\joml-1.10.5.jar",
+        "lib/velocity.jar",
+        "lib/velocity-sources.jar",
+        "lib/ogl/joml-1.10.5.jar",
+        "lib/ogl/lwjgl.jar",
+        "lib/ogl/lwjgl-glfw.jar",
+        "lib/ogl/lwjgl-glfw-sources.jar",
+        "lib/ogl/lwjgl-opengl.jar",
+        "lib/ogl/lwjgl-opengl-sources.jar",
+        "lib/ogl/lwjgl-sources.jar",
+        "lib/ogl/lwjgl-stb.jar",
+        "lib/ogl/lwjgl-stb-sources.jar"
     ]
 }

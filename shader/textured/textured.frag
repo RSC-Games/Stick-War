@@ -1,4 +1,5 @@
-#version 330 core
+#version 400 core
+// ^^ TEMPORARY WORKAROUND- Write an OpenGL 3.3 compliant fix later.
 
 in float alpha;
 in vec2 texCoord;
@@ -10,5 +11,5 @@ void main()
 {
     vec4 chosenTex;
     chosenTex = texture(u_Textures[int(texID)], texCoord);
-    gl_FragColor = chosenTex; //* vec4(1, 1, 1, alpha);   
+    gl_FragColor = chosenTex * vec4(1, 1, 1, alpha);   
 }

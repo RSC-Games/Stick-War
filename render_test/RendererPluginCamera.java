@@ -13,11 +13,10 @@ public class RendererPluginCamera extends Camera {
 
     public void init() {
         this.t = Scene.currentScene.<FollowTarget>getSprite(FollowTarget.class);
-        System.out.println(t);
     }
 
     public void tick() {
         if (t == null) return;
-        this.pos.setPos(this.t.pos.getPos());
+        this.transform.setPosition(this.t.transform.getPosition());
     }
 }

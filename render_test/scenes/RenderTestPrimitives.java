@@ -22,8 +22,8 @@ public class RenderTestPrimitives extends Scene {
         /* Stop adding sprites here. */
 
         /* UI Panel here */
-        sprites.add(new FPSCounter(new Point(3, 12), 0, "FPS", Color.white));
-        sprites.add(new DrawText(new Point(3, 26), 0, "Text", "TEST: Drawing primtives", Color.green));
+        sprites.add(new FPSCounter(new Transform(new Point(3, 12)), "FPS", Color.white));
+        sprites.add(new DrawText(new Transform(new Point(3, 26)), "Text", "TEST: Drawing primtives", Color.green));
         /* End UI Panel */
 
         // Camera required for rendering. DO NOT FORGET!

@@ -11,22 +11,25 @@ import velocity.sprite.Sprite;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
-public class LocalPlayer extends DynamicSprite {
+public class LocalPlayer extends PhysicsSprite {
     private int maxHP = 0;
     private int hp = 0;
 
-    private int speed = 5;
+    private int speed = 6;
+    private int jumpSpeed = 20;
     private AnimStateMachine anim;
     private boolean dead = false;
 
-    public LocalPlayer(Point pos, int rot, String name, String image) {
-        super(pos, rot, name, image);
-        this.sortOrder = 2;
+    private boolean jumped = false;
+
+    public LocalPlayer(Point pos, String name, String image) {
+        super(new Transform(pos), name, image, 2f);
+        this.transform.sortOrder = 2;
 
         this.anim = new AnimStateMachine("./assets/anim/player.anim");
         this.anim.setString("action", "idle");
 
-        this.col.setWH((int)(this.pos.getW()), (int)(this.pos.getH()));
+        this.col.setWH(this.transform.location.getW(), this.transform.location.getH());
     }
 
     public void init() {
@@ -36,13 +39,25 @@ public class LocalPlayer extends DynamicSprite {
     public void tick() {
         if (dead) return;
 
+        // Jumping
+        if (InputSystem.getKey(KeyEvent.VK_SPACE) && touchingGround()) {
+            this.jumped = true;
+            velocity.y = -jumpSpeed;
+        }
+
+        else if (touchingGround())
+            this.jumped = false;
+
         //int vertical = -InputSystem.getAxis(KeyEvent.VK_W, KeyEvent.VK_S);
         int horizontal = InputSystem.getAxis(KeyEvent.VK_D, KeyEvent.VK_A);
         boolean clicked = InputSystem.clicked(MouseEvent.BUTTON1); // For attacking.
 
         // Move the character.
         Point moveVec = clampMove(new Point(horizontal * speed, 0 * speed));
-        pos.translate(moveVec);
+        transform.translate(moveVec);
+
+        if (moveVec.x != 0)
+            transform.setScale(new Point(moveVec.x > 0 ? 1 : -1, 1));
 
         // Animation state.
         setState(moveVec);
@@ -50,11 +65,19 @@ public class LocalPlayer extends DynamicSprite {
 
         // Update draw rect.
         RendererImage drawFrame = anim.getDrawFrame();
-        this.pos.setWH(drawFrame.getWidth(), drawFrame.getHeight());
+        this.transform.updateRect(new Point(drawFrame.getWidth(), drawFrame.getHeight()));
+    }
+
+    @Override
+    public void simPhysics() {
+        super.simPhysics();
     }
 
     @Override
     public void onCollision(Sprite other) {
+        if (other instanceof RectCollider) {
+            //System.out.println("Hit a rectcollider " + other.transform.location);
+        }
     }
 
     @Override
@@ -63,14 +86,14 @@ public class LocalPlayer extends DynamicSprite {
     }
 
     private void setState(Point mv) {
-        if (mv.x == 0 && mv.y == 0)
+        if (jumped)
+            anim.setString("action", "jump");
+        else if (mv.x == 0 && mv.y == 0)
             anim.setString("action", "idle");
-        else if (mv.x > 0) {
+        else if (mv.x > 0)
             anim.setString("action", "right");
-        }
-        else if (mv.x < 0) {
-            anim.setString("action", "left");
-        }
+        else if (mv.x < 0)
+            anim.setString("action", "right");
         /*
         else if (mv.y > 0) {
             anim.setBool("idle", false);
